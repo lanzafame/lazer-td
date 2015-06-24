@@ -1,0 +1,13 @@
+{
+  "name": "platform-mmo",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "binary-parser": "*",
+    "extend": "*",
+    "minimist": "*",
+    "mongoose": "*",
+    "underscore": "*",
+    "ws": "^0.7.2"
+  }
+}

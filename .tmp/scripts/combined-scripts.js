@@ -1,14 +1,22 @@
 (function() {
 
 Crafty.scene('LevelOne', function() {
-  var Floor = Crafty.e('Floor, 2D, Canvas, Color')
-    .attr({
-	  x: 0,
-	  y: 550,
-	  w: 800,
-	  h: 50
-	})
-	.color('black');
+  var BitMap = [[1, 1, 1, 1, 1, 1],
+				[1, 0, 0, 0, 0, 1],
+				[1, 0, 0, 0, 0, 1],
+				[1, 0, 0, 0, 0, 1],
+				[1, 0, 0, 0, 0, 1],
+				[1, 1, 1, 1, 1, 1]];
+
+  for (var i = 0; i < 6*6; i++) {
+	var Bit = Crafty.e('2D, Canvas, Color, Solid')
+	  .attr({
+		w: 10,
+		h: 10
+	  })
+	  .color('black');
+  }
+
 
   var SmallBlock = Crafty.e('2D, Canvas, Color, Fourway, Gravity')
     .attr({
@@ -26,7 +34,8 @@ Crafty.scene('LevelOne', function() {
   SmallBlock.bind('EnterFrame', function() {
 	this.rotation = this.rotation + 1;
   });
-  
+
+
 }, function() {
   // destructor
 });
